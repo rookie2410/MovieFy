@@ -1,9 +1,8 @@
 import telegram
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackQueryHandler
-from OMDB import getRating
+from imdb import getRating
 
-token = ("Enter your Telegram Bot token Here.")
-
+token = ("976482014:AAHu8-lx_d7T8_tb1Z3uGr5JJCwtbJskKkQ")
 updater = Updater(token)
 dispatcher = updater.dispatcher
 bot = telegram.Bot(token)
