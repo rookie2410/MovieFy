@@ -38,7 +38,7 @@ Chatbots are fun, and Telegram has one of the best APIs to make one. This projec
 
 
 # CONTRIBUTERS
-	* Kanishk Singh (ArionMiles)
+	* @[Kanishk Singh (ArionMiles)](https://github.com/ArionMiles)
 	* Amey Khale (Noctis0712
 	* Mihir Kulkarni (TheAntiSnipe)
 	
