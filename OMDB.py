@@ -3,7 +3,7 @@ import json
 
 def getRating(movieTitle):
     url = 'http://www.omdbapi.com'
-    data = {'apikey':'34af84e4','t':movieTitle}
+    data = {'apikey':'Enter the API here','t':movieTitle}
     response = requests.get(url,data)
     return str(response.json().get("imdbRating"))
     
