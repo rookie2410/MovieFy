@@ -1,12 +1,11 @@
+import os
 import requests
-import json
 
 def getRating(movieTitle):
     url = 'http://www.omdbapi.com'
-    data = {'apikey':'Enter the API here','t':movieTitle}
+    api_key = os.getenv('APIKEY')
+    data = {'apikey':api_key,'t':movieTitle}
     response = requests.get(url,data)
-    return str(response.json().get("imdbRating"))
+    imdb_rating = response.json().get("imdbRating")
+    return imdb_rating
     
-
-if __name__=='__main__':
-    print()
