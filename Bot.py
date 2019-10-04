@@ -33,7 +33,8 @@ def ratings(bot,update):
 
 
 if __name__ == "__main__":
-    token = os.getenv('TOKEN')
+    #token = os.getenv('TOKEN')
+    token = 976482014:AAHu8-lx_d7T8_tb1Z3uGr5JJCwtbJskKkQ
     updater = Updater(token)
     dispatcher = updater.dispatcher
     bot = telegram.Bot(token)
