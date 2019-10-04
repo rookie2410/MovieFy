@@ -1,7 +1,7 @@
 import os
 import telegram
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackQueryHandler
-from OMDB import getRating
+from OMDB import get_movie_info
 
 
 def start(bot,update):
@@ -11,11 +11,21 @@ def start(bot,update):
 def ratings(bot,update):
     bot.send_chat_action(chat_id = update.message.chat_id, action = 'typing')
     movie_name = update.message.text
-    movie_rating = getRating(movie_name)
+    movie_info = get_movie_info(movie_name)
     
     message_text = ""
-    if movie_rating:
-        message_text = f"Rating for {movie_name} is {movie_rating}"
+    
+    if movie_info:
+        rating_string = f"IMDb Rating: {movie_info['imdb_rating']}\n"
+        for rating in movie_info['ratings']:
+            rating_string += f"{rating['Source']}: {rating['Value']}\n"
+               
+        message_text = (f"{movie_info['title']} ({movie_info['year']}):\n\n" + 
+            f"Plot:\n{movie_info['plot']}\n\n" +
+            f"Starring:\n{movie_info['actors']}\n\n" +
+            f"Ratings:\n{rating_string}"
+            ) 
+        
     else:
         message_text = f"Movie '{movie_name}' not found. Check for typos and try again."
     
