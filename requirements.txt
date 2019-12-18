@@ -1,8 +1,4 @@
-future==0.18.2
-get==2019.4.13
-post==2019.4.13
 python-telegram-bot==12.2.0
 requests==2.22.0
 telegram==0.0.1
-virtualenv==16.7.9
-wrapt==1.11.2
+
